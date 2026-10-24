@@ -18,7 +18,7 @@
 
 <main class="legal"><div class="wrap">
   <h1>Política de privacidad</h1>
-  <div class="upd">Última actualización: 23 de septiembre de 2026</div>
+  <div class="upd">Última actualización: 24 de octubre de 2026</div>
 
   <div class="box"><p style="margin:0"><strong>En corto:</strong> MiArchivIA lee tus mails con adjuntos para guardar esos archivos ordenados en <strong>tu propio</strong> Google Drive. No vendemos tus datos, no los usamos para publicidad y no guardamos copias de tus documentos fuera de tu cuenta de Google.</p></div>
 
@@ -36,7 +36,8 @@
 
   <h2>3. Clasificación con inteligencia artificial</h2>
   <p>Para clasificar cada documento enviamos a la API de <strong>Claude (Anthropic)</strong> un texto con: el remitente, el asunto, hasta 500 caracteres del cuerpo del mail, los nombres de los archivos adjuntos y los nombres de tus carpetas. <strong>El contenido de los archivos adjuntos no se envía.</strong></p>
-  <p>Anthropic procesa esa información solo para devolver la clasificación. Según sus términos comerciales, no usa los datos enviados por su API para entrenar modelos.</p>
+  <p>Anthropic procesa esa información solo para devolver la clasificación. Según sus términos comerciales, no usa los datos enviados por su API para entrenar modelos, y los borra automáticamente dentro de los 30 días.</p>
+  <p>Si no querés que MiArchivIA procese los mails de un remitente, podés marcarlo como “ignorar”: esos mails no se envían a la IA ni se archivan.</p>
 
   <h2>4. Uso limitado de datos de Google</h2>
   <p>El uso que hace MiArchivIA de la información recibida de las APIs de Google cumple con la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de datos del usuario de los servicios de API de Google</a>, incluidos los requisitos de Uso Limitado. En particular:</p>
@@ -49,9 +50,10 @@
 
   <h2>5. Dónde se guardan y por cuánto tiempo</h2>
   <p>Tus documentos, carpetas y el log quedan en tu Google Drive, bajo tu control: podés moverlos o borrarlos cuando quieras. La configuración vive en tu almacenamiento de usuario de Google Apps Script. Los datos de licencia se conservan mientras tengas una cuenta y hasta 12 meses después de que termine, salvo que pidas borrarlos antes.</p>
+  <p><strong>Registros técnicos:</strong> para detectar fallas, el servicio guarda registros de funcionamiento (fecha, cantidad de mails procesados, errores y la carpeta principal elegida). No incluyen remitentes, asuntos, contenido de los mails ni nombres de archivos, y se borran automáticamente a los 30 días.</p>
 
   <h2>6. Tus derechos</h2>
-  <p>Podés pedir acceso, corrección o eliminación de tus datos escribiendo a <a href="mailto:fernandogabarro@gmail.com">fernandogabarro@gmail.com</a>. Para dejar de usar el servicio, quitá el acceso de MiArchivIA en <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>. A partir de ese momento no leemos nada más de tu cuenta.</p>
+  <p>Podés pedir acceso, corrección o eliminación de tus datos escribiendo a <a href="mailto:fernandogabarro@gmail.com">fernandogabarro@gmail.com</a>. Para dejar de usar el servicio, usá “Desconectar” en el panel de MiArchivIA y quitá el acceso en <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>. A partir de ese momento no leemos nada más de tu cuenta.</p>
   <p>La Agencia de Acceso a la Información Pública, como órgano de control de la Ley 25.326, atiende denuncias y reclamos de quienes consideren afectados sus derechos sobre sus datos personales.</p>
 
   <h2>7. Seguridad</h2>
