@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad — MiArchivIA</title>
+<meta name="theme-color" content="#070C18">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hdr"><div class="wrap">
+  <a class="logo" href="index.html"><span class="logo-text">miarchiv<b>IA</b></span></a>
+  <nav class="hdr-nav"><a class="btn btn-ghost" href="index.html">← Volver</a></nav>
+</div></header>
+
+<main class="legal"><div class="wrap">
+  <h1>Política de privacidad</h1>
+  <div class="upd">Última actualización: 23 de septiembre de 2026</div>
+
+  <div class="box"><p style="margin:0"><strong>En corto:</strong> MiArchivIA lee tus mails con adjuntos para guardar esos archivos ordenados en <strong>tu propio</strong> Google Drive. No vendemos tus datos, no los usamos para publicidad y no guardamos copias de tus documentos fuera de tu cuenta de Google.</p></div>
+
+  <h2>1. Quién es el responsable</h2>
+  <p>MiArchivIA es un servicio operado por Fernando Gabarró, con domicilio en San Salvador de Jujuy, Argentina. Contacto: <a href="mailto:fernandogabarro@gmail.com">fernandogabarro@gmail.com</a>.</p>
+
+  <h2>2. Qué datos usamos y para qué</h2>
+  <ul>
+    <li><strong>Tu cuenta de Google (email):</strong> para identificarte, crear tu licencia (prueba o plan) y darte acceso.</li>
+    <li><strong>Mails con archivos adjuntos (Gmail):</strong> leemos el remitente, el asunto, la fecha, las primeras líneas del cuerpo y los adjuntos, solo para decidir en qué carpeta va cada documento y guardarlo. A los mails procesados les agregamos la etiqueta “miarchivia-procesado”.</li>
+    <li><strong>Google Drive:</strong> creamos la carpeta “MiArchivIA” con sus subcarpetas y guardamos ahí los adjuntos. También creamos una hoja de cálculo “MiArchivIA — Log de actividad” en tu Drive con el registro de lo archivado.</li>
+    <li><strong>Tu configuración:</strong> reglas por remitente, carpetas y preferencias. Se guardan en el almacenamiento privado de usuario de Google Apps Script, asociado a tu cuenta.</li>
+    <li><strong>Datos de la licencia:</strong> tu email, fecha de alta, plan, vencimiento, cómo llegaste (por ejemplo, “instagram”), cantidad de documentos archivados y fecha de última actividad. Los usamos para administrar tu prueba o suscripción y para contactarte sobre el servicio.</li>
+  </ul>
+
+  <h2>3. Clasificación con inteligencia artificial</h2>
+  <p>Para clasificar cada documento enviamos a la API de <strong>Claude (Anthropic)</strong> un texto con: el remitente, el asunto, hasta 500 caracteres del cuerpo del mail, los nombres de los archivos adjuntos y los nombres de tus carpetas. <strong>El contenido de los archivos adjuntos no se envía.</strong></p>
+  <p>Anthropic procesa esa información solo para devolver la clasificación. Según sus términos comerciales, no usa los datos enviados por su API para entrenar modelos.</p>
+
+  <h2>4. Uso limitado de datos de Google</h2>
+  <p>El uso que hace MiArchivIA de la información recibida de las APIs de Google cumple con la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de datos del usuario de los servicios de API de Google</a>, incluidos los requisitos de Uso Limitado. En particular:</p>
+  <ul>
+    <li>Usamos los datos de Gmail y Drive únicamente para brindar la función de archivado que ves en la app.</li>
+    <li>No los transferimos a terceros, salvo lo necesario para prestar el servicio (la clasificación del punto 3), para cumplir la ley o con tu consentimiento.</li>
+    <li>No los usamos para publicidad ni los vendemos.</li>
+    <li>Ninguna persona lee tus mails, salvo que nos lo pidas expresamente para darte soporte o que lo exija la ley.</li>
+  </ul>
+
+  <h2>5. Dónde se guardan y por cuánto tiempo</h2>
+  <p>Tus documentos, carpetas y el log quedan en tu Google Drive, bajo tu control: podés moverlos o borrarlos cuando quieras. La configuración vive en tu almacenamiento de usuario de Google Apps Script. Los datos de licencia se conservan mientras tengas una cuenta y hasta 12 meses después de que termine, salvo que pidas borrarlos antes.</p>
+
+  <h2>6. Tus derechos</h2>
+  <p>Podés pedir acceso, corrección o eliminación de tus datos escribiendo a <a href="mailto:fernandogabarro@gmail.com">fernandogabarro@gmail.com</a>. Para dejar de usar el servicio, quitá el acceso de MiArchivIA en <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>. A partir de ese momento no leemos nada más de tu cuenta.</p>
+  <p>La Agencia de Acceso a la Información Pública, como órgano de control de la Ley 25.326, atiende denuncias y reclamos de quienes consideren afectados sus derechos sobre sus datos personales.</p>
+
+  <h2>7. Seguridad</h2>
+  <p>MiArchivIA corre sobre la infraestructura de Google (Google Apps Script) y se conecta a Gmail, Drive y la API de Claude por conexiones cifradas (HTTPS). Cada usuario solo accede a sus propios datos.</p>
+
+  <h2>8. Cambios</h2>
+  <p>Si cambiamos esta política, actualizamos la fecha de arriba. Si el cambio es importante, te avisamos por mail.</p>
+</div></main>
+
+<footer><div class="wrap">
+  <div>© 2026 MiArchivIA</div>
+  <nav><a href="index.html">Inicio</a><a href="terminos.html">Términos</a><a href="mailto:fernandogabarro@gmail.com">Contacto</a></nav>
+</div></footer>
+</body>
+</html>

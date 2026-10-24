@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MiArchivIA — Tus adjuntos de Gmail, archivados solos</title>
+<meta name="description" content="MiArchivIA lee los adjuntos que te llegan a Gmail, los clasifica con inteligencia artificial y los guarda ordenados en tu Google Drive. Probalo gratis 14 días.">
+<meta property="og:title" content="MiArchivIA — Tus adjuntos de Gmail, archivados solos">
+<meta property="og:description" content="Facturas, resúmenes, contratos: se guardan solos y ordenados en tu Drive. 14 días gratis.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070C18">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect x='5' y='4' width='19' height='24' rx='3' fill='%230F1829' stroke='%231E2E4A' stroke-width='1.5'/%3E%3Ccircle cx='26' cy='9' r='5.5' fill='%2310D9A0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ─────────────────────────────────────────────────────────────
+     CONFIGURACIÓN: pegá acá el link de la web app (Implementar → URL que termina en /exec)
+     ───────────────────────────────────────────────────────────── -->
+<script>
+  window.MIARCHIVIA_APP_URL = 'https://script.google.com/macros/s/AKfycbzBR9R7TvGIfRYAUW9nvMQaHKWbVr2EM182BH5iJfNLZhPBn6JgbVMNV1UL-6S2oJk/exec';
+</script>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="MiArchivIA">
+      <svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <rect x="5" y="4" width="19" height="24" rx="3" fill="#0F1829" stroke="#1E2E4A" stroke-width="1.5"/>
+        <rect x="10" y="12" width="9" height="1.5" rx="0.75" fill="#7A8CAF"/>
+        <rect x="10" y="16" width="7" height="1.5" rx="0.75" fill="#7A8CAF"/>
+        <rect x="10" y="20" width="5" height="1.5" rx="0.75" fill="#7A8CAF"/>
+        <circle cx="26" cy="9" r="6.5" fill="#070C18"/>
+        <circle cx="26" cy="9" r="5.5" fill="#10D9A0"/>
+        <text x="26" y="12.5" text-anchor="middle" font-size="5.5" font-family="Syne,sans-serif" font-weight="800" fill="#070C18">IA</text>
+      </svg>
+      <span class="logo-text">miarchiv<b>IA</b></span>
+    </a>
+    <nav class="hdr-nav">
+      <a class="btn btn-ghost app-link" href="#">Iniciar sesión</a>
+      <a class="btn btn-accent app-link" href="#">Registrarte</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">● 14 días gratis · sin tarjeta</div>
+        <h1>Tus adjuntos de Gmail, <em>archivados solos.</em></h1>
+        <p class="lead">Facturas, resúmenes, contratos, pólizas. MiArchivIA los detecta apenas llegan, entiende qué son y los guarda ordenados en tu Google Drive. Vos no movés un dedo.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-accent btn-lg app-link" href="#">Empezar prueba gratis →</a>
+          <a class="btn btn-ghost btn-lg" href="#como-funciona">Cómo funciona</a>
+        </div>
+        <div class="hero-fine">Entrás con tu cuenta de Google. Sin contraseñas nuevas, sin instalar nada.</div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="photo">
+          <!-- Foto del hero: subí una imagen como img/hero.jpg (escritorio, papeles, notebook). Si no está, queda el fondo. -->
+          <img src="img/hero.jpg" alt="" onerror="this.remove()">
+        </div>
+        <div class="flow-card fc-mail">
+          <div class="fc-label">Llegó a tu Gmail</div>
+          <div class="fc-row"><div class="fc-ico fc-pdf">PDF</div>
+            <div><div>Factura B 0003-00012845.pdf</div><div class="fc-sub">Proveedor de internet · hace 2 min</div></div></div>
+          <div class="fc-row"><div class="fc-ico fc-pdf">PDF</div>
+            <div><div>Resumen_Visa_09-2026.pdf</div><div class="fc-sub">Tu banco · hace 5 min</div></div></div>
+        </div>
+        <div class="ai-pill">IA</div>
+        <div class="flow-card fc-tree">
+          <div class="fc-label">Quedó en tu Drive</div>
+          <div class="tree">
+            📁 <b>MiArchivIA</b><br>
+            &nbsp;&nbsp;├ 📁 Servicios/Internet<br>
+            &nbsp;&nbsp;│&nbsp;&nbsp;└ <span class="new">📄 2026-09 Factura.pdf</span><br>
+            &nbsp;&nbsp;└ 📁 Bancos/Tarjeta<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ <span class="new">📄 2026-09 Resumen.pdf</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ HACE -->
+  <section class="sec-alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">Qué hace</div>
+        <h2>Se acabó buscar “esa factura” entre 4.000 mails.</h2>
+        <p>MiArchivIA trabaja de fondo, aunque cierres el navegador o apagues la compu: revisa tu correo cada 10 minutos (o lo que elijas) y archiva cada documento donde corresponde.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="#10D9A0" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="#10D9A0" stroke-width="1.6"/></svg></div>
+          <h3>Detecta los documentos</h3>
+          <p>PDF, Word, Excel e imágenes. Descarta firmas y logos para no llenarte de basura.</p>
+        </div>
+        <div class="card">
+          <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#10D9A0" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#10D9A0" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Entiende qué son</h3>
+          <p>La IA reconoce si es una factura, un resumen de cuenta, un contrato o un trámite, y de quién viene.</p>
+        </div>
+        <div class="card">
+          <div class="card-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7h7l2 2h9v10H3z" stroke="#10D9A0" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>Lo guarda ordenado</h3>
+          <p>Carpetas por remitente y por tema o año, en <b>tu</b> Google Drive. Si algo no está claro, va a “Revisar”.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">Cómo funciona</div>
+        <h2>Tres pasos y te olvidás.</h2>
+      </div>
+      <div class="grid-3 steps">
+        <div class="card step">
+          <h3>Entrá con tu Google</h3>
+          <p>Tocás “Registrarte”, elegís tu cuenta de Gmail y aceptás los permisos. Tu prueba de 14 días arranca en el momento.</p>
+        </div>
+        <div class="card step">
+          <h3>Revisá la propuesta</h3>
+          <p>MiArchivIA analiza tus últimos mails con adjuntos y te sugiere una estructura de carpetas. La ajustás como quieras.</p>
+        </div>
+        <div class="card step">
+          <h3>Listo, se archiva solo</h3>
+          <p>Desde ahí, cada documento nuevo se guarda solo. Desde el panel ves qué se archivó y aprobás remitentes nuevos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRUEBA -->
+  <section class="sec-alt" style="padding-top:40px">
+    <div class="wrap">
+      <div class="trial">
+        <div style="position:relative;z-index:1">
+          <div class="sec-kicker">Prueba gratis</div>
+          <h2>14 días para ver tu Drive en orden.</h2>
+          <p style="margin-bottom:24px">Sin tarjeta y sin compromiso. Si te sirve, seguís con el plan completo. Si no, tus documentos quedan en tu Drive igual.</p>
+          <a class="btn btn-accent btn-lg app-link" href="#">Empezar prueba gratis →</a>
+        </div>
+        <ul class="checks">
+          <li>14 días completos</li>
+          <li>Hasta 30 mails con documentos nuevos por día</li>
+          <li>Ordena lo de los últimos 30 días (hasta 100 mails con documentos)</li>
+          <li>Todo queda en tu propio Google Drive</li>
+          <li>Funciona sola: no hace falta dejarla abierta</li>
+          <li>La pausás o la desconectás cuando quieras</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUÍA GOOGLE -->
+  <section id="aviso-google">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">Antes de entrar</div>
+        <h2>Si Google te dice “no verificó esta app”, es normal.</h2>
+        <p>MiArchivIA está en proceso de verificación con Google. Mientras tanto, al entrar vas a ver un aviso. Así se sigue:</p>
+      </div>
+      <div class="guide">
+        <div>
+          <div class="gshot">
+            <div class="gtitle"><span class="gwarn">!</span>Google no verificó esta app</div>
+            <p>La app está solicitando acceso a información sensible de tu cuenta de Google…</p>
+            <div class="grow"><span class="glink hl">Configuración avanzada</span><span class="gbtn">Volver a un lugar seguro</span></div>
+          </div>
+          <div class="gcap"><b>1 · Tocá “Configuración avanzada”</b><span>En algunos celulares dice solo “Avanzado”. Está abajo a la izquierda.</span></div>
+        </div>
+        <div>
+          <div class="gshot">
+            <p>Continúa solo si entiendes los riesgos y confías en el desarrollador…</p>
+            <p style="margin-top:14px"><span class="glink hl">Ir a MiArchivIA (no seguro)</span></p>
+          </div>
+          <div class="gcap"><b>2 · Tocá “Ir a MiArchivIA”</b><span>El “(no seguro)” lo agrega Google a toda app que todavía no terminó la verificación.</span></div>
+        </div>
+        <div>
+          <div class="gshot">
+            <div class="gtitle" style="font-size:14.5px">MiArchivIA quiere acceder a tu cuenta de Google</div>
+            <p>☑ Leer, redactar, enviar y eliminar tu correo de Gmail<br>☑ Ver, editar, crear y borrar tus archivos de Google Drive<br>☑ …y otros permisos</p>
+            <div class="grow"><span class="gbtn-o">Cancelar</span><span class="gbtn hl">Continuar</span></div>
+          </div>
+          <div class="gcap"><b>3 · Tocá “Continuar”</b><span>Listo: aparece la pantalla para empezar tu prueba gratis.</span></div>
+        </div>
+      </div>
+      <div class="why"><b>¿Por qué pide esos permisos?</b> Gmail, para leer los mails con adjuntos y marcarlos como archivados. Drive, para crear tus carpetas y guardar los documentos. Google describe esos permisos de forma amplia (“leer, enviar, eliminar”) porque son los únicos que ofrece para este tipo de apps, pero MiArchivIA no envía mails en tu nombre ni borra tus correos: solo lee los mails con adjuntos y les pone una etiqueta. En Drive trabaja únicamente dentro de su carpeta “MiArchivIA”. Podés quitar el acceso cuando quieras desde <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" style="color:var(--accent)">tu cuenta de Google</a>. Más detalle en la <a href="privacidad.html" style="color:var(--accent)">Política de privacidad</a>.</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec-alt">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-kicker">Preguntas frecuentes</div><h2>Lo que todos preguntan.</h2></div>
+      <div class="faq">
+        <details><summary>¿Dónde quedan mis documentos?</summary>
+          <p>En tu propio Google Drive, en una carpeta llamada “MiArchivIA”. No los copiamos a ningún servidor nuestro.</p></details>
+        <details><summary>¿La IA lee mis documentos?</summary>
+          <p>Para clasificar usa el remitente, el asunto, las primeras líneas del mail y el nombre del archivo adjunto. El contenido del archivo no se envía.</p></details>
+        <details><summary>¿Qué pasa cuando termina la prueba?</summary>
+          <p>El archivado automático se pausa. Todo lo que ya se archivó sigue en tu Drive. Si querés seguir, nos escribís y activamos el plan completo.</p></details>
+        <details><summary>¿Funciona con cuentas de empresa (Google Workspace)?</summary>
+          <p>Sí, siempre que tu administrador permita apps de terceros. Con Gmail personal funciona directo.</p></details>
+        <details><summary>¿Cómo lo desactivo?</summary>
+          <p>Entrá a <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" style="color:var(--accent)">myaccount.google.com/permissions</a>, buscá MiArchivIA y quitale el acceso. Tus carpetas quedan intactas.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Tu archivo, en orden. <em>Solo.</em></h2>
+      <p>Probalo 14 días gratis con tu cuenta de Google.</p>
+      <a class="btn btn-accent btn-lg app-link" href="#">Empezar prueba gratis →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr">2026</span> MiArchivIA · San Salvador de Jujuy, Argentina</div>
+    <nav>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="terminos.html">Términos</a>
+      <a href="https://wa.me/5493884098777?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20MiArchivIA" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:fernandogabarro@gmail.com">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Todos los botones de registro / inicio de sesión van a la web app.
+  // Si la landing se abre con ?utm_source=instagram (o ?src=...), el origen viaja al CRM.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var src = q.get('src') || q.get('utm_source') || q.get('ref') || 'landing';
+    var url = window.MIARCHIVIA_APP_URL + '?src=' + encodeURIComponent(src);
+    document.querySelectorAll('.app-link').forEach(function (a) { a.href = url; });
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
